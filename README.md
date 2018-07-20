@@ -71,7 +71,7 @@ for dormant users.
 
 Built With :
 -------------------------------------------------------------------------------
-Go compiler,HTML,CSS,Javascript.
+Go compiler,HTML,CSS,Javascript,Jquery.
 
 
 Known Bugs :
