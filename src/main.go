@@ -3,7 +3,7 @@ package main
 
 import (
 	"net/http"
-
+	"fmt"
 	"github.com/gorilla/mux"
 )
 
@@ -20,7 +20,12 @@ func newRouter() *mux.Router {
 	r.HandleFunc("/getsites", getSiteHandler).Methods("GET")
 	r.HandleFunc("/getsites", createSiteHandler).Methods("POST")
 	r.HandleFunc("/deleteurl", DeleteUrlHandler).Methods("POST")
+	r.HandleFunc("/hello", handler).Methods("GET")
 	return r
+}
+
+func handler(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "Hello Go !!!")
 }
 
 var sitesMap map[string]SiteMonitor
