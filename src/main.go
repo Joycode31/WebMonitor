@@ -4,7 +4,7 @@ package main
 import (
 	"net/http"
 	"fmt"
-	"github.com/gorilla/mux"
+	"../pkg/mux"
 )
 
 // The new router function creates the router and
