@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!--
+Currenty i am not able to handle dyanmic font icons as well as
+runtime url validation handling on UI.
+-->
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  </head>
+
+<body>
+
+
+  <div id="mydiv">
+  <h3 align="center">The Website Monitoring Tool</h3>
+  <form action="/getsites" method="post">
+    Website Name:
+    <input type="text" name="siteName">
+    <input type="submit" value="Submit">
+  </form>
+
+  <br/>
+
+  <table border = "1">
+    <tr>
+      <th>Website Name   </th>
+      <th>Status</th>
+	  <th>Action</th>
+    </tr>
+  </table>
+</div>
+<style>
+#mydiv {
+	position: absolute;
+	width: 500px;
+	height: 300px;
+	z-index: 15;
+	top: 50%;
+	left: 50%;
+	margin: -100px 0 0 -150px;
+	background: lightblue;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script>
+    siteTable = document.querySelector("table")
+    fetch("/getsites")
+      .then(response => response.json())
+      .then(siteList => {
+        siteList.forEach(check => {
+          row = document.createElement("tr")
+          siteName = document.createElement("td")
+          siteName.innerHTML = check.siteName
+          siteStatus = document.createElement("td")
+          siteStatus.innerHTML = check.SiteStatus
+		  siteAction = document.createElement("td")
+		  btn=document.createElement("button")
+		  btn.setAttribute('class','btn')
+		  btn.innerHTML='delete'
+		  
+		  
+		  
+		  if(check.SiteStatus === "DOWN") {
+		  siteAction.appendChild(btn);
+		  siteAction.addEventListener('click',function(){$.ajax({
+						url: "http://localhost:8080/deleteurl",
+						method: "post",
+						data:{"siteName":check.siteName},
+						success: function(data) {
+						
+						},
+					});})
+					}
+			else {
+			siteAction.innerHTML='Active'
+			}
+
+          row.appendChild(siteName)
+          row.appendChild(siteStatus)
+          row.appendChild(siteAction)
+          siteTable.appendChild(row)
+        })
+      })
+      function deleteUrl(url) {
+		if(url) {
+      	  $.ajax({
+						url: "http://localhost:8080/deleteurl",
+						method: "delete",
+						data:{"url":url},
+						success: function(data) {
+						
+						},
+					});
+		}
+
+	  }
+  </script>
+</body>
+
+</html>
+
