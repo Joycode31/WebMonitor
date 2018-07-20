@@ -7,3 +7,6 @@
 [submodule "mux2"]
 	path = mux2
 	url = https://github.com/gorilla/mux
+[submodule "mux3"]
+	path = mux3
+	url = https://github.com/gorilla/mux
