@@ -60,7 +60,7 @@ ok      _/home/atp/My_Golang_Project/src        0.005s
 
 Testing on Web :
 ------------------------------------------------------------------------------
-http://192.168.56.102:8080/views/
+http://localhost:8080/views/
 
 Following functionality is supported.
 1) Adding new url entry.
