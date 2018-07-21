@@ -6,9 +6,11 @@ Getting Started :
 
 The application monitors the list of urls stored in the application map.
 When a new URL is added,application checks if the url is running and update
-the status to U as "Active".If the Url is not reachable then it displays a
-delete button in UI so that the Url is marked for deletion.Apart from this
-application constantly checks the status of added Urls at every 5 minutes.
+the status to U as "Active".If the Url is not reachable or if timeout(800ms) 
+occurs then it displays a delete button in UI so that the Url is marked for 
+deletion and user can remove the url from webadmin.Apart from this application 
+constantly checks the status of stored Urls in application at every 5 minutes
+and if url is down then delete button is displayed.
 
 Prerequisites :
 ------------------------------------------------------------------------------
@@ -65,7 +67,7 @@ http://localhost:8080/views/
 Following functionality is supported.
 1) Adding new url entry.
 2) If the Url is down,a "delete" button will be displayed.User can delete Url 
-for dormant users.
+for dormant websites.
 3) If the url is pingable with 800 ms time it is marked as "Active" and displayed
 "Active" on browser.
 
