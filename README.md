@@ -67,7 +67,7 @@ http://localhost:8080/views/
 Following functionality is supported.
 1) Adding new url entry.
 2) If the Url is down,a "delete" button will be displayed.User can delete Url 
-for dormant websites.
+for dormant urls.
 3) If the url is pingable with 800 ms time it is marked as "Active" and displayed
 "Active" on browser.
 
@@ -80,10 +80,9 @@ Known Bugs :
 ---------------------------------------------------------------------------------
 
 1) When we enter some invalid url, i am just displays message on browser.
-The app should display the message somewhere in the web page in label some 
-exception.
+The app should display the message somewhere in the web page as some "Invalid Input".
 
-2) Delete button is activated when the website is down.On clicking delete button, 
-it removes entires for that perticular website and refresh the page.
+2) Delete button is activated when the url is down.On clicking delete button, 
+it removes entires for that perticular url and refresh the page.
 At present , we have to do manual refresh.I will see why this is not redirecting.
 
