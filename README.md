@@ -87,5 +87,3 @@ exception.
 it removes entires for that perticular website and refresh the page.
 At present , we have to do manual refresh.I will see why this is not redirecting.
 
-3) Test handling not done from application .
-
