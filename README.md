@@ -80,7 +80,8 @@ Known Bugs :
 ---------------------------------------------------------------------------------
 
 1) When we enter some invalid url, i am just displays message on browser.
-The app should display the message somewhere in the web page as some "Invalid Input".
+The app should display the message somewhere in the web page as "Invalid Input"
+entered.
 
 2) Delete button is activated when the url is down.On clicking delete button, 
 it removes entires for that perticular url and refresh the page.
